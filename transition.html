@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+	<style>
+		div{
+			width: 100px;height: 50px;
+			text-align: center;
+			color: #000;
+			font-size: 15px;
+			font-weight: bold;
+			line-height: 2.8;
+			margin-bottom: 10px;
+			-webkit-border-radius:5px;
+			-webkit-box-shadow:inset 0 0 5px rgba(102,153,0,0.5),inset 0 0 5px rgba(102,153,0,0.8);
+		}
+		/*逐渐变慢效果：*/ 
+		#ease{
+			-webkit-transition:all 5s ease 0.1s;
+		}
+		/*加速效果：*/ 
+		#ease-in{
+			-webkit-transition: all 3s ease-in 0.5s;  
+		}
+		/*减速效果：*/ 
+		#ease-out{
+			-webkit-transition: all 5s ease-out 0s;
+		}
+		/*先加速然后减速效果：*/ 
+		#ease-in-out{
+			-webkit-transition: all 1s ease-in-out 2s; 
+		}
+		/*匀速效果：*/  
+		#linear{
+			-webkit-transition: all 6s linear 0s;
+		}
+		/*该值允许你去自定义一个时间曲线(贝塞尔曲线)效果：*/  
+		#cubic-bezier{
+			 -webkit-transition: all 4s cubic-bezier(0,0.8,0.2,0.9) 1s;  
+		}
+		div:hover {
+			    -webkit-transform: rotate(360deg) scale(1.2);  
+    			-webkit-border-radius: 25px;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oDiv=document.getElementsByTagName("div");
+			for (var i =0 ;i<oDiv.length;i++){
+				oDiv[i].onmouseover=function(){
+					this.innerHTML=this.id;
+				}
+				oDiv[i].onmouseout=function(){
+					this.innerHTML='';
+				}
+			};
+		}
+	</script>
+</head>
+<body>
+	<div id="ease">
+		
+	</div>
+	<div id="ease-in">
+		
+	</div>
+	<div id="ease-out">
+		
+	</div>
+	<div id="ease-in-out">
+		
+	</div>
+	<div id="linear">
+		
+	</div>
+	<div id="cubic-bezier">
+		
+	</div>
+
+</body>
+</html>
